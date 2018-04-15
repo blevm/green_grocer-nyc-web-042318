@@ -27,7 +27,7 @@ def apply_coupons(cart, coupons)
     end
     binding.pry
   end
-  
+
   cart
 end
 
