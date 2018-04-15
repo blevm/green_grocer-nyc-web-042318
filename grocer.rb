@@ -2,13 +2,13 @@ require "pry"
 
 def consolidate_cart(cart)
 
-  cart.each_with_object({}) do |cart_list, final_list|
+  cart.each_with_object([Hash.new(0)]) do |cart_list, final_list|
     cart_list.each do |item_key, item_details_hash|
       if final_list[item_key]
-        final_list[item_key][:count] = 0
+        item_details_hash[:count] = 0
       else
         final_list[item_key] = item_details_hash
-        final_list[item_key][:count] += 1
+        item_details_hash[:count] += 1
       end
     end
   end
