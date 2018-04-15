@@ -15,18 +15,18 @@ end
 
 def apply_coupons(cart, coupons)
 
-coupons.each do |coupon_list|
-  item = coupon_list[:item]
+  coupons.each do |coupon_list|
+    item = coupon_list[:item]
 
-    if cart[item] && cart[item][:count] >= coupon_list[:num]
-      if cart["#{item} W/COUPON"]
-        cart["#{item} W/COUPON"][:count] += 1
-      else
-        cart["#{item} W/COUPON"] = {:price => coupon_list[:cost], cart[item].keys[1] => cart[item].values[1], :count => 1}
+      if cart[item] && cart[item][:count] >= coupon_list[:num]
+        if cart["#{item} W/COUPON"]
+          cart["#{item} W/COUPON"][:count] += 1
+        else
+          cart["#{item} W/COUPON"] = {:price => coupon_list[:cost], cart[item].keys[1] => cart[item].values[1], :count => 1}
+        end
+        cart[item][:count] -= coupon_list[:num]
       end
-      cart[item][:count] -= coupon_list[:num]
     end
-  end
 end
 
 def apply_clearance(cart)
