@@ -1,8 +1,9 @@
 require "pry"
 
 def consolidate_cart(cart)
+  final_list = Hash.new(0)
 
-    cart.each_with_object(Hash.new(0)) do |cart_list, final_list|
+    cart.each do |cart_list|
       cart_list.each do |item_key, item_details_hash|
         #final_list[item_key] = {}
         final_list[item_key] = item_details_hash
@@ -19,6 +20,7 @@ def consolidate_cart(cart)
 
       end
     end
+    
 end
 
 def apply_coupons(cart, coupons)
