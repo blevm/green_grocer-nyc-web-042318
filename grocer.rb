@@ -16,7 +16,7 @@ end
 def apply_coupons(cart, coupons)
   cart_with_coupons = Hash.new(0)
 
-  cart.collect |item, item_hash|
+  cart.collect do |item, item_hash|
     coupons.each do |coupon_list|
     item = coupon_list[:item]
 
@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
       cart[item][:count] -= coupon_list[:num]
     end
   end
-  binding.pry
+  #binding.pry
   cart_with_coupons
 end
 
