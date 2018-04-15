@@ -2,28 +2,17 @@ require "pry"
 
 def consolidate_cart(cart)
 
-#  cart.each_with_object([Hash.new(0)]) do |cart_list, final_list|
-#    cart_list.each do |item_key, item_details_hash|
-#      if final_list[item_key]
-#        item_details_hash[:count] += 1
-#      else
-#        item_details_hash[:count] = 1
-#        final_list[item_key] = item_details_hash
-#      end
-#    end
-#  end
-#  cart
-
-cart.each_with_object({}) do |item, result|
-  item.each do |type, attributes|
-    if result[type]
-      attributes[:count] += 1
-    else
-      attributes[:count] = 1
-      result[type] = attributes
+  cart.each_with_object(Hash.new(0)) do |cart_list, final_list|
+    cart_list.each do |item_key, item_details_hash|
+      if final_list[item_key]
+        item_details_hash[:count] += 1
+      else
+        item_details_hash[:count] = 1
+        final_list[item_key] = item_details_hash
+      end
     end
   end
-end
+  cart
 end
 
 def apply_coupons(cart, coupons)
