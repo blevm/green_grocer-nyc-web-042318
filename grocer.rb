@@ -14,21 +14,35 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+#  coupons.each do |coupon_list|
+#    item = coupon_list[:item]
+#
+#    if cart[item] && cart[item][:count] >= coupon_list[:num]
+#      if cart["#{item} W/ COUPON"]
+#        cart["#{item} W/ COUPON"][:count] += 1
+#      else
+#        cart["#{item} W/ COUPON"] = {:price => coupon_list[:cost], cart["#{item} W/ COUPON"][:clearance] => cart[item][:clearance], :count => 1}
+#      end
+#      cart[item][:count] -= coupon_list[:num]
+#    end
+#    binding.pry
+#  end
+
+#  cart
+
   coupons.each do |coupon_list|
-    item = coupon_list[:item]
-
-    if cart[item] && cart[item][:count] >= coupon_list[:num]
-      if cart["#{item} W/ COUPON"]
-        cart["#{item} W/ COUPON"][:count] += 1
-      else
-        cart["#{item} W/ COUPON"] = {:price => coupon_list[:cost], cart["#{item} W/ COUPON"][:clearance] => cart[item][:clearance], :count => 1}
-      end
-      cart[item][:count] -= coupon_list[:num]
+  item = coupon_list[:item]
+  if cart[item] && cart[item][:count] >= coupon_list[:num]
+    if cart["#{name} W/COUPON"]
+      cart["#{name} W/COUPON"][:count] += 1
+    else
+      cart["#{name} W/COUPON"] = {:count => 1, :price => coupon_list[:cost]}
+      cart["#{name} W/COUPON"][:clearance] = cart[item][:clearance]
     end
-    binding.pry
+    cart[item][:count] -= coupon_list[:num]
   end
-
-  cart
+end
+cart
 end
 
 def apply_clearance(cart)
