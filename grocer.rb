@@ -9,7 +9,7 @@ def consolidate_cart(cart)
         final_list[item_key].merge!(item_details_hash)
         final_list[item_key][:count] = 0
         item = item_key
-        binding.pry
+        
 
         cart.each do |cart_list|
           cart_list.each do |item_key, item_details_hash|
@@ -18,7 +18,7 @@ def consolidate_cart(cart)
             end
           end
         end
-
+binding.pry
       end
     end
     final_list
