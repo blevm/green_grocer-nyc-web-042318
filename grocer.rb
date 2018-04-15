@@ -18,9 +18,10 @@ def consolidate_cart(cart)
             end
           end
         end
-        binding.pry
+        
       end
     end
+    binding.pry
     final_list
 end
 
