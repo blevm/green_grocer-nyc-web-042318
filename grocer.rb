@@ -2,7 +2,7 @@ require "pry"
 
 def consolidate_cart(cart)
   final_list = Hash.new(0)
-  binding.pry
+  
 
     cart.each do |cart_list|
       cart_list.each do |item_key, item_details_hash|
@@ -22,7 +22,7 @@ def consolidate_cart(cart)
 
       end
     end
-
+binding.pry
     final_list
 end
 
