@@ -23,7 +23,7 @@ def consolidate_cart(cart)
       end
     end
 binding.pry
-    final_list
+    cart
 end
 
 def apply_coupons(cart, coupons)
