@@ -37,7 +37,7 @@ def apply_clearance(cart)
       item_hash[:price] *= 0.8
     end
   end
-  
+
 
 end
 
