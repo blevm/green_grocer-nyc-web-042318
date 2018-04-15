@@ -28,8 +28,6 @@ def apply_coupons(cart, coupons)
       cart[item][:count] -= coupon_list[:num]
     end
   end
-  #binding.pry
-  cart_with_coupons
 end
 
 def apply_clearance(cart)
