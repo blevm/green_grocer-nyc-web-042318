@@ -14,9 +14,8 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  cart_with_coupons = Hash.new(0)
 
-    coupons.each do |coupon_list|
+  coupons.each do |coupon_list|
     item = coupon_list[:item]
 
     if cart[item] && cart[item][:count] >= coupon_list[:num]
@@ -28,6 +27,7 @@ def apply_coupons(cart, coupons)
       cart[item][:count] -= coupon_list[:num]
     end
   end
+  cart
 end
 
 def apply_clearance(cart)
