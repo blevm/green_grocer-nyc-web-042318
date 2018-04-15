@@ -47,6 +47,7 @@ def checkout(cart, coupons)
   apply_clearance(cart_at_checkout)
   cart_at_checkout.each do |item, item_hash|
     binding.pry
+  end
 
 
 end
