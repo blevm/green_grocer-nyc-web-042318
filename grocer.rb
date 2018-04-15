@@ -1,4 +1,4 @@
-binding.pry
+require "pry"
 
 def consolidate_cart(cart)
   cart.each_with_object({}) do |cart_list, final_list|
