@@ -7,8 +7,8 @@ def consolidate_cart(cart)
       if final_list[item_key]
         item_details_hash[:count] += 1
       else
-        final_list[item_key] = item_details_hash
         item_details_hash[:count] = 1
+        final_list[item_key] = item_details_hash    
       end
     end
   end
